@@ -2,13 +2,6 @@ body {
     background-image: url("https://cdn.hipwallpaper.com/i/40/63/0aYXQO.jpg");
   }
 
-.maintext {
-    width: 500px;
-    height: 800px;
-    padding: 0px 300px;
-    font-family: Comic Sans MS, cursive, sans-serif;
-  }
-
 .navigation {
     list-style-type: none;
     margin: 0;
