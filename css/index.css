@@ -57,3 +57,8 @@ nav a:hover:not(.active) {
     color: white;
     font-family: Comic Sans MS, cursive, sans-serif;
 }
+.maintext1{
+    padding: 120px 70px;
+    font-family: Comic Sans MS, cursive, sans-serif;
+    font-size: 25px;
+}
