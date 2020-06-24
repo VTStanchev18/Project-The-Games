@@ -37,3 +37,24 @@ nav a {
 nav a:hover:not(.active) {
   background-color: rgb(139,69,19);
 }
+
+.maintext {
+  background-color: rgba(255,255,255,0.25);
+  margin: auto;
+  margin-top: 10px;
+  width: 50%;
+  height: 1000px;
+  border: solid black 3px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 16%;
+  transform: translate(-50%,-50%);
+  font-size: 45px;
+  color: white;
+  font-family: Comic Sans MS, cursive, sans-serif;
+}
