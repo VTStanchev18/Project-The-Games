@@ -1,58 +1,37 @@
-var myGamePiece;
+document.addEventListener('DOMContentLoaded',()=>{
+    const cardArray=[
+        {
+            name:'',
+            img:''
+        },
+    ]
+    
+    const grid = document.querySelector('.grid')
+    const resultDisplay = document.querySelector('#result')
+    var cardsChosen = []
+    var cardsChosenId = []
+    const cardsWon = []
 
-function startGame() {
-    myGameArea.start();
-    myGamePiece = new component(50, 40, "brown", 210, 120);
-}
+    // create your board
+        function createBoard() {
+            for (let i = 0; i < cardArray.length; i++) {
+                var card = document.createElement('img')
+                card.setAttribute('src', '')
+                card.setAttribute('data-id', i)
+                card.addEventListener('click', flipCard)
+                grid.appendChild(card)
+            }
+        }
 
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener('keydown', function (e) {
-            myGameArea.keys = (myGameArea.keys || []);
-            myGameArea.keys[e.keyCode] = (e.type == "keydown");
-        })
-        window.addEventListener('keyup', function (e) {
-            myGameArea.keys[e.keyCode] = (e.type == "keydown");
-        })
-    }, 
-    clear : function(){
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    // flip a card
+    function flipCard() {
+        var cardId = this.getAttribute('data-id')
+        cardsChosen.push(cardArray[cardId].name)
+        cardsChosenId.push(cardId)
+        this.setAttribute('src', cardArray[cardId].img)
+
+        if (cardsChosen.length ===2) {
+          setTimeout(checkForMatch, 500)
+        }
     }
-}
-
-function component(width, height, color, x, y) {
-    this.gamearea = myGameArea;
-    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;
-    this.x = x;
-    this.y = y;
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-    this.newPos = function() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-    }
-}
-
-function updateGameArea() {
-    myGameArea.clear();
-    myGamePiece.speedX = 0;
-    myGamePiece.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -1; }
-    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = 1; }
-    if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -1; }
-    if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = 1; }
-    myGamePiece.newPos();
-    myGamePiece.update();
-}
+})

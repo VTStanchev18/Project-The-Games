@@ -42,8 +42,8 @@ nav a:hover:not(.active) {
   background-color: rgba(255,255,255,0.25);
   margin: auto;
   margin-top: 10px;
-  width: 50%;
-  height: 1000px;
+  width: 70%;
+  height: 700px;
   border: solid black 3px;
   padding: 10px;
   border-radius: 10px;
@@ -63,4 +63,10 @@ canvas {
  margin-left:700px;
  margin-top:350px;
  position:absolute;
+}
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  height: 240px;
+  width: 400px;
 }
