@@ -52,7 +52,7 @@ nav a:hover:not(.active) {
 .title {
   position: absolute;
   left: 50%;
-  top: 16%;
+  top: 12%;
   transform: translate(-50%,-50%);
   font-size:3vw;
   color: white;
@@ -72,12 +72,24 @@ canvas {
   width: 280px;
   margin: 200px;
   margin-left: 340px;
-  margin-top:260px;
+  margin-top:280px;
   position:absolute;
 }
 
 h3 {
  margin-left:350px;
- margin-top:170px; 
+ margin-top:200px; 
  position: absolute;
+ color:white;
+font-size: 20px;
+font-family: Comic Sans MS, cursive, sans-serif;
+}
+p
+{
+  position:absolute;
+margin-top:140px;
+margin-left:340px;
+color:white;
+font-size: 20px;
+font-family: Comic Sans MS, cursive, sans-serif;
 }

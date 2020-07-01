@@ -65,3 +65,9 @@ nav a:hover:not(.active) {
     font-size: 25px;
     color:white;
 }
+.image1
+{
+   position:absolute;
+    margin-left:160px;
+    
+}
